@@ -19,6 +19,9 @@ OLSKLatest.load({
 	limit: 10, // default: Infinity
 });
 </script>
+
+<!-- optional: include extra styles -->
+<script src="https://olsk.rosano.ca/OLSKDecor/master/ui-style.css"></script>
 ```
 
 ### Options
