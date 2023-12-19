@@ -21,6 +21,12 @@ OLSKLatest.load({
 </script>
 ```
 
+### Options
+
+| name | description |
+| --- | --- |
+| `hideBlurb` | ignores and hides `description` even if set. default: `false` |
+
 ## Questions
 
 Feel free to reach out on [Mastodon](https://mastodon.online/@rosano) or [Twitter](https://twitter.com/rosano).

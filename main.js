@@ -62,7 +62,7 @@
 			<div class="OLSKLatestList">
 				${ input.map( (e, i) => `
 					<a class="OLSKLatestListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
-					 + (!e.description ? '' : `<p class="OLSKLatestListItemBlurb">${ e.description }</p>`)
+					 + (!e.description || this.hideBlurb ? '' : `<p class="OLSKLatestListItemBlurb">${ e.description }</p>`)
 					 + (i === input.length - 1 ? '' : `<hr/>`)
 				 ).join('') }
 			</div></div>`;

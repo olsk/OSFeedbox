@@ -15,12 +15,11 @@ Object.entries({
 });
 
 describe('OLSKLatest_Access', function () {
-
-	const hasBlurb = uRandomElement(true, false);
+	
 	const items = Array.from(Array(uRandomInt(10))).map(function () {
-		return uItem(!hasBlurb ? {
+		return uItem({
 			description: null,
-		} : {})
+		});
 	});
 
 	before(function() {
@@ -49,20 +48,41 @@ describe('OLSKLatest_Access', function () {
 		return browser.assert.elements(OLSKLatestListItem, items.length);
 	});
 
-	if (hasBlurb) {
+	it('hides OLSKLatestListItemBlurb', function () {
+		return browser.assert.elements(OLSKLatestListItemBlurb, 0);
+	});
+
+	context('hasBlurb', function () {
+		
+		const items = Array.from(Array(uRandomInt(10))).map(uItem);
+
+		before(function() {
+			return OSVisit(kDefaultPath, {
+				items: JSON.stringify(items),
+			});
+		});
 
 		it('shows OLSKLatestListItemBlurb', function () {
 			return browser.assert.elements(OLSKLatestListItemBlurb, items.length);
 		});
+	
+	});
 
-	}
+	context('hideBlurb', function () {
+		
+		const items = Array.from(Array(uRandomInt(10))).map(uItem);
 
-	if (!hasBlurb) {
+		before(function() {
+			return OSVisit(kDefaultPath, {
+				items: JSON.stringify(items),
+				hideBlurb: true,
+			});
+		});
 
 		it('hides OLSKLatestListItemBlurb', function () {
 			return browser.assert.elements(OLSKLatestListItemBlurb, 0);
 		});
-		
-	}
+	
+	});
 
 });
