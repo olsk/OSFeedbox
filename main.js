@@ -59,9 +59,13 @@
 				<span class="OLSKLatestHeading">Latest updates</span>
 				<sup><a class="OLSKLatestButton" href="${ this.feed }" title="Feed">(feed)</a></sup>
 			</h2>
-			<dl class="OLSKLatestList">
-				${ input.map( e => `<dt><a class="OLSKLatestListItem" href="${ e.link }" target="_blank">${ e.title }</a></dt>` + (!e.description ? '' : `<dd class="OLSKLatestListItemBlurb">${ e.description }</dd>`) ).join('') }
-			</dl></div>`;
+			<div class="OLSKLatestList">
+				${ input.map( (e, i) => `
+					<a class="OLSKLatestListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
+					 + (!e.description ? '' : `<p class="OLSKLatestListItemBlurb">${ e.description }</p>`)
+					 + (i === input.length - 1 ? '' : `<hr/>`)
+				 ).join('') }
+			</div></div>`;
 		},
 
 		// MESSAGE
