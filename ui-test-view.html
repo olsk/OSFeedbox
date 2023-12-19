@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="./main.js"></script>
+</head>
+<body>
+
+<div class="alfa-bravo-charlie"></div>
+
+<script type="text/javascript">
+OLSKLatest.load(Object.assign(Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e) {
+	if (['items'].includes(e[0])) {
+		e[1] = JSON.parse(e[1]);
+	}
+
+	return e;
+})), {
+	parent: document.querySelector('.alfa-bravo-charlie'),
+	limit: 10,
+}));
+</script>
+
+</body>
+</html>
