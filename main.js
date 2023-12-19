@@ -54,7 +54,7 @@
 		},
 
 		populate (input) {
-			this.parent.innerHTML = `<div class="OLSKLatest">
+			this.parent.innerHTML = `<div class="OLSKLatest OLSKDecorModule">
 			<h2>
 				<span class="OLSKLatestHeading">Latest updates</span>
 				<sup><a class="OLSKLatestButton" href="${ this.feed }" title="Feed">(feed)</a></sup>

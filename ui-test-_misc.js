@@ -12,6 +12,14 @@ describe('OLSKLatest_Misc', function () {
 		});
 	});
 
+	describe('OLSKLatest', function test_OLSKLatest () {
+
+		it('classes OLSKDecorModule', function () {
+			return browser.assert.hasClass(OLSKLatest, 'OLSKDecorModule');
+		});
+		
+	});
+
 	describe('OLSKLatestButton', function test_OLSKLatestButton () {
 
 		it('sets href', function () {
