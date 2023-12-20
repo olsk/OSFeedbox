@@ -6,8 +6,10 @@
 
 	const mod = {
 
-		async load (input, debug) {
-			const _window = debug || window;
+		// COMMAND
+
+		async goLoad (input, _debug) {
+			const _window = _debug || window;
 
 			class OLSKLatestInstance {
 				limit = Infinity;
@@ -18,11 +20,11 @@
 			}
 
 			const instance = new OLSKLatestInstance(input);
-			return instance.populate(input.items || instance._items(await mod._fetch(input.feed)));
+			return instance._populate(input.items || instance._items(await mod._fetch(input.feed)));
 		},
 
-		async _fetch (input, debug) {
-			const _window = debug || window;
+		async _fetch (input, _debug) {
+			const _window = _debug || window;
 
 			return await (await _window.fetch(mod._corsProxy() + input)).text();
 		},
@@ -53,7 +55,7 @@
 			return output;
 		},
 
-		populate (input) {
+		_populate (input) {
 			this.parent.innerHTML = `<div class="OLSKLatest OLSKDecorModule">
 			<h2>
 				<span class="OLSKLatestHeading">Latest updates</span>
@@ -77,7 +79,7 @@
 				return;
 			}
 
-			// _mod.populate();
+			// _mod._populate();
 		},
 
 		// LIFECYCLE
@@ -88,7 +90,9 @@
 
 	};
 
-	Object.assign(exports, mod);
+	Object.assign(exports, mod, {
+		load: mod.goLoad,
+	});
 
 	if (typeof window === 'object') {
 		// mod.lifeDidLoad();

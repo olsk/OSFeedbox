@@ -52,7 +52,7 @@ describe('DOMContentLoaded', function test_DOMContentLoaded() {
 		const item = Math.random().toString();
 		deepEqual(await uCapture(function (populate) {
 			_DOMContentLoaded({
-				async load () {
+				async goLoad () {
 					return item;
 				},
 				populate,
