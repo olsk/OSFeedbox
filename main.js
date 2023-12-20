@@ -82,7 +82,7 @@
 
 		// LIFECYCLE
 
-		LifecycleModuleDidLoad (debug) {
+		lifeDidLoad (debug) {
 			(debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
 		},
 
@@ -91,7 +91,7 @@
 	Object.assign(exports, mod);
 
 	if (typeof window === 'object') {
-		mod.LifecycleModuleDidLoad();
+		mod.lifeDidLoad();
 	}
 
 	Object.defineProperty(exports, '__esModule', {
