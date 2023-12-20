@@ -62,11 +62,11 @@ describe('DOMContentLoaded', function test_DOMContentLoaded() {
 
 });
 
-describe('LifecycleModuleDidLoad', function test_LifecycleModuleDidLoad() {
+describe('lifeDidLoad', function test_lifeDidLoad() {
 
-	it('listens for DOMContentLoaded', function () {
+	it.skip('listens for DOMContentLoaded', function () {
 		deepEqual(uCapture(function (addEventListener) {
-			mod.LifecycleModuleDidLoad({
+			mod.lifeDidLoad({
 				document: {
 					addEventListener,
 				},

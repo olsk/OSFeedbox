@@ -83,7 +83,7 @@
 		// LIFECYCLE
 
 		lifeDidLoad (debug) {
-			(debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
+			// (debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
 		},
 
 	};
@@ -91,7 +91,7 @@
 	Object.assign(exports, mod);
 
 	if (typeof window === 'object') {
-		mod.lifeDidLoad();
+		// mod.lifeDidLoad();
 	}
 
 	Object.defineProperty(exports, '__esModule', {
