@@ -1,6 +1,6 @@
 const kDefaultPath = 'file://' + __dirname + '/ui-test-view.html';
 
-describe('OLSKLatest_Misc', function () {
+describe('OSFeedbox_Misc', function () {
 
 	const feed = Math.random().toString();
 	const item = uItem();
@@ -12,30 +12,30 @@ describe('OLSKLatest_Misc', function () {
 		});
 	});
 
-	describe('OLSKLatest', function test_OLSKLatest () {
+	describe('OSFeedbox', function test_OSFeedbox () {
 
 		it('classes OLSKDecorModule', function () {
-			return browser.assert.hasClass(OLSKLatest, 'OLSKDecorModule');
+			return browser.assert.hasClass(OSFeedbox, 'OLSKDecorModule');
 		});
 		
 	});
 
-	describe('OLSKLatestButton', function test_OLSKLatestButton () {
+	describe('OSFeedboxButton', function test_OSFeedboxButton () {
 
 		it('sets href', function () {
-			return browser.assert.attribute(OLSKLatestButton, 'href', feed);
+			return browser.assert.attribute(OSFeedboxButton, 'href', feed);
 		});
 
 	});
 
-	describe('OLSKLatestListItem', function test_OLSKLatestListItem () {
+	describe('OSFeedboxListItem', function test_OSFeedboxListItem () {
 
 		it('sets text', function () {
-			return browser.assert.text(OLSKLatestListItem, item.title);
+			return browser.assert.text(OSFeedboxListItem, item.title);
 		});
 
 		it('sets href', function () {
-			return browser.assert.attribute(OLSKLatestListItem, 'href', item.link);
+			return browser.assert.attribute(OSFeedboxListItem, 'href', item.link);
 		});
 		
 	});

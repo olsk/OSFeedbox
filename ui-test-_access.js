@@ -1,20 +1,20 @@
 const kDefaultPath = 'file://' + __dirname + '/ui-test-view.html';
 
 Object.entries({
-	OLSKLatest: '.OLSKLatest',
+	OSFeedbox: '.OSFeedbox',
 
-	OLSKLatestHeading: '.OLSKLatestHeading',
+	OSFeedboxHeading: '.OSFeedboxHeading',
 
-	OLSKLatestButton: '.OLSKLatestButton',
+	OSFeedboxButton: '.OSFeedboxButton',
 
-	OLSKLatestList: '.OLSKLatestList',
-	OLSKLatestListItem: '.OLSKLatestListItem',
-	OLSKLatestListItemBlurb: '.OLSKLatestListItemBlurb',
+	OSFeedboxList: '.OSFeedboxList',
+	OSFeedboxListItem: '.OSFeedboxListItem',
+	OSFeedboxListItemBlurb: '.OSFeedboxListItemBlurb',
 }).map(function (e) {
 	return global[e.shift()] = e.pop();
 });
 
-describe('OLSKLatest_Access', function () {
+describe('OSFeedbox_Access', function () {
 	
 	const items = Array.from(Array(uRandomInt(10))).map(function () {
 		return uItem({
@@ -28,28 +28,28 @@ describe('OLSKLatest_Access', function () {
 		});
 	});
 
-	it('shows OLSKLatest', function () {
-		return browser.assert.elements(OLSKLatest, 1);
+	it('shows OSFeedbox', function () {
+		return browser.assert.elements(OSFeedbox, 1);
 	});
 
-	it('shows OLSKLatestHeading', function () {
-		return browser.assert.elements(OLSKLatestHeading, 1);
+	it('shows OSFeedboxHeading', function () {
+		return browser.assert.elements(OSFeedboxHeading, 1);
 	});
 
-	it('shows OLSKLatestButton', function () {
-		return browser.assert.elements(OLSKLatestButton, 1);
+	it('shows OSFeedboxButton', function () {
+		return browser.assert.elements(OSFeedboxButton, 1);
 	});
 
-	it('shows OLSKLatestList', function () {
-		return browser.assert.elements(OLSKLatestList, 1);
+	it('shows OSFeedboxList', function () {
+		return browser.assert.elements(OSFeedboxList, 1);
 	});
 
-	it('shows OLSKLatestListItem', function () {
-		return browser.assert.elements(OLSKLatestListItem, items.length);
+	it('shows OSFeedboxListItem', function () {
+		return browser.assert.elements(OSFeedboxListItem, items.length);
 	});
 
-	it('hides OLSKLatestListItemBlurb', function () {
-		return browser.assert.elements(OLSKLatestListItemBlurb, 0);
+	it('hides OSFeedboxListItemBlurb', function () {
+		return browser.assert.elements(OSFeedboxListItemBlurb, 0);
 	});
 
 	context('hasBlurb', function () {
@@ -62,8 +62,8 @@ describe('OLSKLatest_Access', function () {
 			});
 		});
 
-		it('shows OLSKLatestListItemBlurb', function () {
-			return browser.assert.elements(OLSKLatestListItemBlurb, items.length);
+		it('shows OSFeedboxListItemBlurb', function () {
+			return browser.assert.elements(OSFeedboxListItemBlurb, items.length);
 		});
 	
 	});
@@ -79,8 +79,8 @@ describe('OLSKLatest_Access', function () {
 			});
 		});
 
-		it('hides OLSKLatestListItemBlurb', function () {
-			return browser.assert.elements(OLSKLatestListItemBlurb, 0);
+		it('hides OSFeedboxListItemBlurb', function () {
+			return browser.assert.elements(OSFeedboxListItemBlurb, 0);
 		});
 	
 	});

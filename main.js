@@ -1,7 +1,7 @@
 (function(global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 		typeof define === 'function' && define.amd ? define(['exports'], factory) :
-			(factory((global.OLSKLatest = global.OLSKLatest || {})));
+			(factory((global.OSFeedbox = global.OSFeedbox || {})));
 }(this, (function(exports) { 'use strict';
 
 	const mod = {
@@ -11,7 +11,7 @@
 		async goLoad (input, _debug) {
 			const _window = _debug || window;
 
-			class OLSKLatestInstance {
+			class OSFeedboxInstance {
 				limit = Infinity;
 
 			  constructor (params) {
@@ -19,7 +19,7 @@
 			  }
 			}
 
-			const instance = new OLSKLatestInstance(input);
+			const instance = new OSFeedboxInstance(input);
 			return instance._populate(input.items || instance._items(await mod._fetch(input.feed)));
 		},
 
@@ -56,15 +56,15 @@
 		},
 
 		_populate (input) {
-			this.parent.innerHTML = `<div class="OLSKLatest OLSKDecorModule">
+			this.parent.innerHTML = `<div class="OSFeedbox OLSKDecorModule">
 			<h2>
-				<span class="OLSKLatestHeading">Latest updates</span>
-				<sup><a class="OLSKLatestButton" href="${ this.feed }" title="Feed">(feed)</a></sup>
+				<span class="OSFeedboxHeading">Latest updates</span>
+				<sup><a class="OSFeedboxButton" href="${ this.feed }" title="Feed">(feed)</a></sup>
 			</h2>
-			<div class="OLSKLatestList">
+			<div class="OSFeedboxList">
 				${ input.map( (e, i) => `
-					<a class="OLSKLatestListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
-					 + (!e.description || this.hideBlurb ? '' : `<p class="OLSKLatestListItemBlurb">${ e.description }</p>`)
+					<a class="OSFeedboxListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
+					 + (!e.description || this.hideBlurb ? '' : `<p class="OSFeedboxListItemBlurb">${ e.description }</p>`)
 					 + (i === input.length - 1 ? '' : `<hr/>`)
 				 ).join('') }
 			</div></div>`;
