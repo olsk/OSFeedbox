@@ -30,7 +30,7 @@
 		},
 
 		_corsProxy () {
-			return 'https://cors-proxy.fringe.zone/';
+			return 'https://cors.rosano.ca/';
 		},
 
 		_items (input) {
