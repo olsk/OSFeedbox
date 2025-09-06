@@ -27,11 +27,11 @@ OSFeedbox.load({
 
 ### Options
 
-| name | description |
-| --- | --- |
-| `limit` | maximum item count. default: `5` |
-| `hideBlurb` | ignores and hides `description` even if set. default: `false` |
-| `prefixCORS` | URL prefix to avoid CORS issues. default: `https://cors.rosano.ca/` |
+| param | type | notes | default |
+| - | - | - | - |
+| `limit` | integer | maximum item count | `5` |
+| `hideBlurb` | boolean | ignores and hides `description` even if set | `false` |
+| `prefixCORS` | string | URL prefix to avoid CORS issues. | `https://cors.rosano.ca/` |
 
 ## Questions
 
