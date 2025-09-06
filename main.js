@@ -16,6 +16,7 @@
 				constructor (params) {
 					Object.assign(this, {
 						limit: 5,
+						prefixCORS: 'https://cors.rosano.ca/',
 					}, params, mod);
 				}
 			}
@@ -27,11 +28,7 @@
 		async _fetch (input, _debug) {
 			const _window = _debug || window;
 
-			return await (await _window.fetch(mod._corsProxy() + input)).text();
-		},
-
-		_corsProxy () {
-			return 'https://cors.rosano.ca/';
+			return await (await _window.fetch((this.prefixCORS || '') + input)).text();
 		},
 
 		_items (input) {
