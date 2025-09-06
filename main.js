@@ -16,7 +16,6 @@
 				constructor (params) {
 					Object.assign(this, {
 						limit: 5,
-						prefixCORS: 'https://cors.rosano.ca/',
 					}, params, mod);
 				}
 
@@ -27,6 +26,13 @@
 			(_window).document.addEventListener('DOMContentLoaded', function (e) {
 				instance.DOMContentLoaded();
 			});
+		},
+
+		goLoadROCO () {
+			return Array.from(document.querySelectorAll('[data-OSFeedbox]')).forEach(e => mod.goLoad({
+				parent: e,
+				prefixCORS: 'https://cors.rosano.ca/',
+			}));
 		},
 
 		async _fetch (input, _debug) {
@@ -79,6 +85,10 @@
 		},
 
 	};
+
+	if (typeof window === 'object') {
+		mod.goLoadROCO();
+	}
 
 	Object.assign(exports, mod, {
 		load: mod.goLoad,

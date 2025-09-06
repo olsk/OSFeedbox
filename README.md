@@ -17,7 +17,6 @@ OSFeedbox.load({
 	parent: document.querySelector('.alfa-bravo-charlie'),
 	feed: 'https://rosano.ca/feed',
 	limit: 10, // default: 5
-	prefixCORS: false, // default: https://cors.rosano.ca/
 });
 </script>
 
@@ -31,7 +30,7 @@ OSFeedbox.load({
 | - | - | - | - |
 | `limit` | integer | maximum item count | `5` |
 | `hideBlurb` | boolean | ignores and hides `description` even if set | `false` |
-| `prefixCORS` | string | URL prefix to avoid CORS issues. | `https://cors.rosano.ca/` |
+| `prefixCORS` | string | URL prefix to avoid CORS issues. | `undefined` |
 
 ## Questions
 
