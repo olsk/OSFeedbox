@@ -29,8 +29,8 @@
 		},
 
 		goLoadROCO () {
-			return Array.from(document.querySelectorAll('[data-OSFeedbox]')).forEach(e => mod.goLoad({
-				parent: e,
+			return Array.from(document.querySelectorAll('script[data-OSFeedbox]')).forEach(e => mod.goLoad({
+				parent: e.insertAdjacentElement('afterend', document.createElement('div')) ,
 				prefixCORS: 'https://cors.rosano.ca/',
 			}));
 		},
