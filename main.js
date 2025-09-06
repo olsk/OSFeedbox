@@ -12,10 +12,11 @@
 			const _window = _debug || window;
 
 			class OSFeedboxInstance {
-				limit = Infinity;
 
 				constructor (params) {
-					Object.assign(this, params, mod);
+					Object.assign(this, {
+						limit: 5,
+					}, params, mod);
 				}
 			}
 

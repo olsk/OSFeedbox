@@ -16,7 +16,7 @@ RSS Feed preview used on homepages for [Zero Data App](https://0data.app), [Hype
 OSFeedbox.load({
 	parent: document.querySelector('.alfa-bravo-charlie'),
 	feed: 'https://rosano.ca/feed',
-	limit: 10, // default: Infinity
+	limit: 10, // default: 5
 });
 </script>
 
@@ -28,6 +28,7 @@ OSFeedbox.load({
 
 | name | description |
 | --- | --- |
+| `limit` | maximum item count. default: `5` |
 | `hideBlurb` | ignores and hides `description` even if set. default: `false` |
 
 ## Questions
