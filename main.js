@@ -19,10 +19,14 @@
 						prefixCORS: 'https://cors.rosano.ca/',
 					}, params, mod);
 				}
+
 			}
 
 			const instance = new OSFeedboxInstance(input);
-			return instance._populate(input.items || instance._items(await instance._fetch(input.feed)));
+
+			(_window).document.addEventListener('DOMContentLoaded', function (e) {
+				instance.DOMContentLoaded();
+			});
 		},
 
 		async _fetch (input, _debug) {
@@ -71,19 +75,7 @@
 		// MESSAGE
 
 		async DOMContentLoaded () {
-			const _mod = (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') ? this : mod;
-
-			if (typeof window === 'object' && window.origin === null) {
-				return;
-			}
-
-			// _mod._populate();
-		},
-
-		// LIFECYCLE
-
-		lifeDidLoad (debug) {
-			// (debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
+			return this._populate(this.items || this._items(await this._fetch(this.feed)))
 		},
 
 	};
@@ -91,10 +83,6 @@
 	Object.assign(exports, mod, {
 		load: mod.goLoad,
 	});
-
-	if (typeof window === 'object') {
-		// mod.lifeDidLoad();
-	}
 
 	Object.defineProperty(exports, '__esModule', {
 		value: true
