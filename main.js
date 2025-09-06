@@ -14,9 +14,9 @@
 			class OSFeedboxInstance {
 				limit = Infinity;
 
-			  constructor (params) {
-			    Object.assign(this, params, mod);
-			  }
+				constructor (params) {
+					Object.assign(this, params, mod);
+				}
 			}
 
 			const instance = new OSFeedboxInstance(input);
