@@ -32,6 +32,7 @@
 			return Array.from(document.querySelectorAll('script[data-OSFeedbox]')).forEach(e => mod.goLoad({
 				parent: e.insertAdjacentElement('afterend', document.createElement('div')) ,
 				prefixCORS: 'https://cors.rosano.ca/',
+				feed: 'https://rosano.ca/blog/feed',
 			}));
 		},
 
