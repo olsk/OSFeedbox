@@ -21,7 +21,7 @@
 			}
 
 			const instance = new OSFeedboxInstance(input);
-			return instance._populate(input.items || instance._items(await mod._fetch(input.feed)));
+			return instance._populate(input.items || instance._items(await instance._fetch(input.feed)));
 		},
 
 		async _fetch (input, _debug) {
