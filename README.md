@@ -6,7 +6,7 @@ RSS Feed preview used on homepages for [Zero Data App](https://0data.app), [Hype
 
 ```html
 <!-- 1. include dependencies -->
-<script src="https://olsk.rosano.ca/feedbox/master/main.js"></script>
+<script src="https://pkg.rosano.ca/feedbox/master/main.js"></script>
 
 <!-- 2. label a parent/container element -->
 <div class="alfa-bravo-charlie"></div>
