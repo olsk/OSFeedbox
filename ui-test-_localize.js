@@ -1,6 +1,6 @@
 const kDefaultPath = 'file://' + __dirname + '/ui-test-view.html';
 
-describe('OSFeedbox_Localize', function () {
+describe('feedbox_Localize', function () {
 
 	before(function() {
 		return OSVisit(kDefaultPath, {
@@ -8,12 +8,12 @@ describe('OSFeedbox_Localize', function () {
 		});
 	});
 
-	it('localizes OSFeedboxHeading', function () {
-		return browser.assert.text(OSFeedboxHeading, 'Latest updates');
+	it('localizes feedboxHeading', function () {
+		return browser.assert.text(feedboxHeading, 'Latest updates');
 	});
 
-	it('localizes OSFeedboxButton', function() {
-		return browser.assert.attribute(OSFeedboxButton, 'title', 'Feed');
+	it('localizes feedboxButton', function() {
+		return browser.assert.attribute(feedboxButton, 'title', 'Feed');
 	});
 
 });

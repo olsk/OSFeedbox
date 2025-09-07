@@ -9,7 +9,7 @@
 <div class="alfa-bravo-charlie OLSKDecor"></div>
 
 <script type="text/javascript">
-OSFeedbox.load(Object.assign(Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e) {
+feedbox.load(Object.assign(Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e) {
 	if (['items'].includes(e[0])) {
 		e[1] = JSON.parse(e[1]);
 	}

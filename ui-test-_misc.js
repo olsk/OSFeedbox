@@ -1,6 +1,6 @@
 const kDefaultPath = 'file://' + __dirname + '/ui-test-view.html';
 
-describe('OSFeedbox_Misc', function () {
+describe('feedbox_Misc', function () {
 
 	const feed = Math.random().toString();
 	const item = uItem();
@@ -12,30 +12,30 @@ describe('OSFeedbox_Misc', function () {
 		});
 	});
 
-	describe('OSFeedbox', function test_OSFeedbox () {
+	describe('feedbox', function test_feedbox () {
 
 		it('classes OLSKDecorModule', function () {
-			return browser.assert.hasClass(OSFeedbox, 'OLSKDecorModule');
+			return browser.assert.hasClass(feedbox, 'OLSKDecorModule');
 		});
 		
 	});
 
-	describe('OSFeedboxButton', function test_OSFeedboxButton () {
+	describe('feedboxButton', function test_feedboxButton () {
 
 		it('sets href', function () {
-			return browser.assert.attribute(OSFeedboxButton, 'href', feed);
+			return browser.assert.attribute(feedboxButton, 'href', feed);
 		});
 
 	});
 
-	describe('OSFeedboxListItem', function test_OSFeedboxListItem () {
+	describe('feedboxListItem', function test_feedboxListItem () {
 
 		it('sets text', function () {
-			return browser.assert.text(OSFeedboxListItem, item.title);
+			return browser.assert.text(feedboxListItem, item.title);
 		});
 
 		it('sets href', function () {
-			return browser.assert.attribute(OSFeedboxListItem, 'href', item.link);
+			return browser.assert.attribute(feedboxListItem, 'href', item.link);
 		});
 		
 	});
