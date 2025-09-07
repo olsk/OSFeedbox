@@ -28,7 +28,7 @@ describe('_fetch', function test__fetch() {
 				url,
 				_fetch,
 			});
-		}), [mod._corsProxy() + url]);
+		}), [url]);
 	});
 
 	it('returns response.text', async function () {
