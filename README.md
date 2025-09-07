@@ -2,6 +2,8 @@
 
 RSS Feed preview used on homepages for [Zero Data App](https://0data.app), [Hyperdraft](https://hyperdraft.rosano.ca) and others.
 
+See [introducing feedbox](https://utopia.rosano.ca/introducing-osfeedbox/) for the motivation.
+
 ## Setup
 
 ```html
